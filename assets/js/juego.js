@@ -48,16 +48,21 @@
 
  const valorCarta = (carta) => {
     const valor = carta.substring(0, carta.length-1);
-    let puntos = 0;
-    if(isNaN(valor)){
-        console.log('No es un número');
-    }else{
-        console.log('Es un número');
-        puntos = valor * 1;
-        console.log(puntos);
-    }
+    return ( isNaN(valor) ) ?
+            (valor === 'A') ? 11 : 10
+            : valor * 1;
+    
+    // let puntos = 0;
+    // if(isNaN(valor)){
+    //     puntos = (valor === 'A') ? 11 : 10;
+    //     console.log(puntos);
+    // }else{
+    //     puntos = valor * 1;
+    //     console.log(puntos);
+    // }
  }
 
- valorCarta('5D');
+ const valor = valorCarta(pedirCarta());
+ console.log(valor);
 
  
