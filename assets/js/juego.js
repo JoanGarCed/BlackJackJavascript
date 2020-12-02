@@ -46,4 +46,10 @@
 
  //pedirCarta();
 
+ const valorCarta = (carta) => {
+
+ }
+
+ valorCarta('2D');
+
  
