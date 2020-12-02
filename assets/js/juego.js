@@ -47,9 +47,17 @@
  //pedirCarta();
 
  const valorCarta = (carta) => {
-
+    const valor = carta.substring(0, carta.length-1);
+    let puntos = 0;
+    if(isNaN(valor)){
+        console.log('No es un número');
+    }else{
+        console.log('Es un número');
+        puntos = valor * 1;
+        console.log(puntos);
+    }
  }
 
- valorCarta('2D');
+ valorCarta('5D');
 
  
