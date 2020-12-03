@@ -78,4 +78,11 @@
     imgCarta.src = `assets/cartas/${carta}.png`;
     imgCarta.classList.add('carta');
     divCartasJugador.append(imgCarta);
+
+
+    if(puntosJudador > 21) {
+        console.warn('Lo siento mucho, perdiste! NOOB');
+        btnPedir.disabled = true;
+    }
+
  });
