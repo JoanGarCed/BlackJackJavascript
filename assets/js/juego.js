@@ -14,6 +14,7 @@
  //Referencias del HTML
  const btnPedir = document.querySelector('#btnPedir');
 
+ const divCartasJugador = document.querySelector('#jugador-cartas');
  const puntosHTML = document.querySelectorAll('small');
 
 
@@ -28,7 +29,7 @@
 
     for(let tipo of tipos){
         for(let especial of especiales){
-            deck.push(tipo+especial);
+            deck.push(especial+tipo);
         }
        
     }
@@ -73,6 +74,8 @@
     
     puntosHTML[0].innerText = puntosJudador;
 
-    
-
+    const imgCarta = document.createElement('img');
+    imgCarta.src = `assets/cartas/${carta}.png`;
+    imgCarta.classList.add('carta');
+    divCartasJugador.append(imgCarta);
  });
