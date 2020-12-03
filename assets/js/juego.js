@@ -14,6 +14,8 @@
  //Referencias del HTML
  const btnPedir = document.querySelector('#btnPedir');
 
+ const puntosHTML = document.querySelectorAll('small');
+
 
  // Esta función crea una nueva baraja
  const crearDeck = () => {
@@ -68,5 +70,9 @@
  btnPedir.addEventListener('click', () => {
     const carta = pedirCarta();
     puntosJudador += valorCarta(carta);
-    console.log(puntosJudador);
+    
+    puntosHTML[0].innerText = puntosJudador;
+
+    
+
  });
