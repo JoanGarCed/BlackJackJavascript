@@ -84,6 +84,15 @@
     }
 
      }while((puntosComputadora < puntosMinimos) && (puntosMinimos <= 21));
+
+     if(puntosComputadora === puntosMinimos){
+         alert('Nadie gana :(');
+     }else if(puntosMinimos > 21){
+        alert('Computadora Gana'); 
+     }else if(puntosComputadora > 21) {
+         alert('Jugador Gana');
+     }
+
  }
 
  // Eventos
@@ -98,7 +107,6 @@
     imgCarta.src = `assets/cartas/${carta}.png`;
     imgCarta.classList.add('carta');
     divCartasJugador.append(imgCarta);
-
 
     if(puntosJudador > 21) {
         console.warn('Lo siento mucho, perdiste! NOOB');
