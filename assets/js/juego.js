@@ -1,9 +1,8 @@
-/**
- * 2C = Two of Club 
- * 2D = Two of Diamonds
- * 2H = Two of Hearts 
- * 2S = Two of Spades 
- */
+(() => {
+    
+    const personajes = ['Ana', 'Mercy', 'Mei'];
+
+})()
 
  let deck = [];
  const tipos = ['C','D','H','S'];
