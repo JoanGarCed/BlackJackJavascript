@@ -1,6 +1,7 @@
 (() => {
     
     const personajes = ['Ana', 'Mercy', 'Mei'];
+    console.log(personajes);
 
 })()
 
