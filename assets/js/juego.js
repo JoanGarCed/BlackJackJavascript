@@ -1,11 +1,7 @@
 (() => {
+    'use strict'
     
-    const personajes = ['Ana', 'Mercy', 'Mei'];
-    console.log(personajes);
-
-})()
-
- let deck = [];
+    let deck = [];
  const tipos = ['C','D','H','S'];
  const especiales = ['A','J','Q','K'];
  let puntosJudador = 0,
@@ -152,3 +148,10 @@ btnDetener.addEventListener('click', () => {
     btnPedir.disabled = false;
     btnDetener.disabled = false;
  });
+
+
+})()
+
+
+
+ 
