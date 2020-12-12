@@ -23,7 +23,6 @@
             puntosJugadores.push(0);
         }
 
-        console.log({puntosJugadores});
     }
 
     // Esta función crea una nueva baraja
