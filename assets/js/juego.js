@@ -2,8 +2,9 @@
     'use strict'
     
     let deck = [];
-    const tipos = ['C','D','H','S'];
-    const especiales = ['A','J','Q','K'];
+    const tipos = ['C','D','H','S'],
+          especiales = ['A','J','Q','K'];
+          
     let puntosJudador = 0,
         puntosComputadora = 0;
 
