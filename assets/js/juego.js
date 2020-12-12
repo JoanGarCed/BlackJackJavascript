@@ -76,6 +76,7 @@
 
         const carta = pedirCarta();
         
+        acumularPuntos(carta, puntosJugadores.length -1);
 
         const imgCarta = document.createElement('img');
         imgCarta.src = `assets/cartas/${carta}.png`;
