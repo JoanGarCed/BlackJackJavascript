@@ -4,23 +4,28 @@
     let deck = [];
     const tipos = ['C','D','H','S'],
           especiales = ['A','J','Q','K'];
-          
+
     let puntosJudador = 0,
         puntosComputadora = 0;
 
     //Referencias del HTML
-    const btnPedir = document.querySelector('#btnPedir');
-    const btnDetener = document.querySelector('#btnDetener');
-    const btnNuevo = document.querySelector('#btnNuevo');
+    const btnPedir = document.querySelector('#btnPedir'),
+          btnDetener = document.querySelector('#btnDetener'),
+          btnNuevo = document.querySelector('#btnNuevo');
 
-    const divCartasJugador = document.querySelector('#jugador-cartas');
-    const divCartasComputadora = document.querySelector('#computadora-cartas');
-    const puntosHTML = document.querySelectorAll('small');
+    const divCartasJugador = document.querySelector('#jugador-cartas'),
+          divCartasComputadora = document.querySelector('#computadora-cartas'),
+          puntosHTML = document.querySelectorAll('small');
 
+    //Esta función inicializa el juego
+    const inicializarJuego = () => {
+        deck = crearDeck();
+    }
 
     // Esta función crea una nueva baraja
     const crearDeck = () => {
 
+        deck = []
         for(let i = 2; i <= 10; i++){
             for(let tipo of tipos){
                 deck.push(i+tipo);
@@ -33,13 +38,8 @@
             }
         
         }
-
-            deck = _.shuffle(deck);
-            // console.log(deck);
-            return deck;
+            return _.shuffle(deck);
     }
-
-    crearDeck();
 
     const pedirCarta = () => {
 
