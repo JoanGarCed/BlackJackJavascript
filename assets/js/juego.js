@@ -62,7 +62,11 @@
         
     }
 
-    const acumularPuntos = () => {
+    //Turno: 0 = primer jugador y el último será la computadora
+    const acumularPuntos = ( carta, turno ) => {
+
+        puntosJugadores[turno] += valorCarta(carta);
+        puntosHTML[turno].innerText = puntosJugadores[turno];
 
     }
 
@@ -71,8 +75,7 @@
         do {
 
         const carta = pedirCarta();
-        puntosComputadora += valorCarta(carta);
-        puntosHTML[1].innerText = puntosComputadora;
+        
 
         const imgCarta = document.createElement('img');
         imgCarta.src = `assets/cartas/${carta}.png`;
