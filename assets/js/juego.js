@@ -47,10 +47,8 @@
             throw 'No hay cartas en el deck';
         }
 
-        let carta = deck.pop();
-        // console.log(deck);
-        // console.log(carta); // carta debe ser primera o ultima y dejar de existir
-        return carta;
+        return deck.pop();
+    
     }
 
     //pedirCarta();
