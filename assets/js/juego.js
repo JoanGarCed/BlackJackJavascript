@@ -5,8 +5,7 @@
     const tipos = ['C','D','H','S'],
           especiales = ['A','J','Q','K'];
 
-    let puntosJudador = 0,
-        puntosComputadora = 0;
+    let puntosJugadores = [];
 
     //Referencias del HTML
     const btnPedir = document.querySelector('#btnPedir'),
@@ -18,8 +17,13 @@
           puntosHTML = document.querySelectorAll('small');
 
     //Esta función inicializa el juego
-    const inicializarJuego = () => {
+    const inicializarJuego = ( numJugadores = 2) => {
         deck = crearDeck();
+        for(let i = 0; i < numJugadores; i++){
+            puntosJugadores.push(0);
+        }
+
+        console.log({puntosJugadores});
     }
 
     // Esta función crea una nueva baraja
@@ -51,8 +55,6 @@
     
     }
 
-    //pedirCarta();
-
     const valorCarta = (carta) => {
         const valor = carta.substring(0, carta.length-1);
         return ( isNaN(valor) ) ?
@@ -61,8 +63,11 @@
         
     }
 
-    // turno de la computadora
+    const acumularPuntos = () => {
 
+    }
+
+    // turno de la computadora
     const turnoComputadora = (puntosMinimos) => {
         do {
 
@@ -136,8 +141,9 @@
 
     btnNuevo.addEventListener('click', () => {
         console.clear();
-        deck = [];
-        deck = crearDeck();
+        inicializarJuego();
+        // deck = [];
+        // deck = crearDeck();
         puntosJudador = 0;
         puntosComputadora = 0;
         puntosHTML[0].innerText = 0;
