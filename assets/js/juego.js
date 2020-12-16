@@ -1,4 +1,4 @@
-(() => {
+const miModulo = (() => {
     'use strict'
     
     let deck = [];
@@ -18,9 +18,18 @@
     //Esta función inicializa el juego
     const inicializarJuego = ( numJugadores = 2) => {
         deck = crearDeck();
+
+        puntosJugadores = [];
+
         for(let i = 0; i < numJugadores; i++){
             puntosJugadores.push(0);
         }
+
+        puntosHTML.forEach(elem => elem.innerText = 0);
+        divCartasJugadores.forEach(elem => elem.innerHTML = '');
+      
+        btnPedir.disabled = false;
+        btnDetener.disabled = false;
 
     }
 
@@ -117,6 +126,7 @@
     // Eventos
 
     btnPedir.addEventListener('click', () => {
+
         const carta = pedirCarta();
         const puntosJugador = acumularPuntos(carta, 0);
 
@@ -145,23 +155,11 @@
 
     // nuevo
 
-    btnNuevo.addEventListener('click', () => {
-        console.clear();
-        inicializarJuego();
-        // deck = [];
-        // deck = crearDeck();
-        // puntosJudador = 0;
-        // puntosComputadora = 0;
-        // puntosHTML[0].innerText = 0;
-        // puntosHTML[1].innerText = 0;
-        // divCartasComputadora.innerHTML = '';
-        // divCartasJugador.innerHTML = '';
-        // btnPedir.disabled = false;
-        // btnDetener.disabled = false;
-    });
+    return {
+        nuevoJuego : inicializarJuego
+    };
 
-
-})()
+})();
 
 
 
